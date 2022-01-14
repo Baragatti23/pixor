@@ -3,3 +3,234 @@
     padding: 0;
     box-sizing: border-box;
 }
+a{
+   color: currentColor;
+   text-decoration: none;
+}
+ul,ol,li{
+   list-style: none;
+}
+body{
+   font-family: Arial, Helvetica, sans-serif;
+}
+.ModalUpload{
+   display: flex;
+   width: 100%;
+   height: 100vh;
+   justify-content: center;
+   align-items: center;
+   background-color: rgba(0,0,0,.7);
+   backdrop-filter: blur(5px);
+   --width-modal: 598px;
+   --height-modal: 957px;
+   --height-header: 60px;
+   --height-letMenu: 150px;
+   --color_theme_val: 168, 20, 204;
+   --color_theme: rgb(168, 20, 204);
+   --trans: all .3s ease;
+}
+.ModalUpload--app{
+   height: var(--width-modal);
+   width: var(--height-modal);
+   max-height: calc(100vh - 32px);
+   max-width: calc(100vw - 32px);
+   border-radius: 24px;
+   background-color: #fff;
+   overflow: hidden;
+   display: flex;
+   flex-wrap: wrap;
+   grid-template-columns: repeat(3,1fr);
+   color: rgb(21, 41, 52);
+}
+.ModalUpload--app input[type=file]{
+   display: none;
+}
+.ModalUpload--app--header{
+   width: 100%;
+   border-bottom: 1px solid rgba(0,0,0,.05);
+   height: var(--height-header);
+   position: relative;
+   overflow: hidden;
+   --padd: 15px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 0 var(--pad);
+}
+.ModalUpload--app--leftMenu{
+   width: var(--height-letMenu);
+   height: calc(100% - var(--height-header));
+   border-right: 1px solid rgba(0,0,0,.05);
+}
+.ModalUpload--app--center{
+   width: calc(100% - var(--height-letMenu));
+   height: calc(100% - var(--height-header));
+}
+.ModalUpload--app--header-btnClose,.ModalUpload--app--header-btnValidate{
+   padding: 0 15px;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   height: 75%;
+   --color: #8c9ba5;
+   color: var(--color);
+   cursor: pointer;
+   font-size: 14px;
+   font-weight: bold;
+   position: absolute;
+   /* text-transform: uppercase; */
+   border-radius: 7px;
+}
+.ModalUpload--app--header-btnClose{
+   left: var(--padd);
+}
+.ModalUpload--app--header-btnValidate{
+   right: var(--padd);
+   color: var(--color_theme);
+   background-color: rgba(var(--color_theme_val),.1);
+   padding: 0 22px;
+}
+.ModalUpload--app--header-btnValidate span{
+   display: inline-flex;
+   padding: 1px 4px;
+   font-weight: bold;
+   margin-left: 8px;
+   color: #fff;
+   background-color: var(--color_theme);
+   border-radius: 40px;
+}
+.ModalUpload--app--header-msg{
+   font-size: 15px;
+}
+.ModalUpload--app--header-btnClose:hover,.ModalUpload--app--leftMenu li:hover{
+   background-color: #f0f3f6;
+}
+.ModalUpload--app--header-btnClose svg{
+   width: 12px;
+   margin-right: 8px;
+}
+.ModalUpload--app--header-btnClose svg path{
+   fill: var(--color);
+}
+.ModalUpload--app--leftMenu{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+   padding: 20px 15px;
+}
+.ModalUpload--app--leftMenu li{
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   justify-content: center;
+   font-size: 13px;
+   border-radius: 4px;
+   padding: 8px 10px;
+   cursor: pointer;
+   margin-bottom: 15px;
+}
+.ModalUpload--app--leftMenu li span{
+   display: block;
+   text-align: center;
+   width: 100%;
+}
+.ModalUpload--app--leftMenu li._active_{
+   background-color: rgba(var(--color_theme_val),.1);
+   color: var(--color_theme);
+}
+.ModalUpload--app--leftMenu li._active_ svg *{
+   fill: var(--color_theme)
+}
+.ModalUpload--app--leftMenu li svg{
+   width: 40px;
+   margin-bottom: 10px;
+}
+.ModalUpload--app--leftMenu li svg *{
+   fill: rgb(21, 41, 52);
+}
+.ModalUpload--app--center{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.ModalUpload--app--center--spaceViewEmpty{
+   width: 100%;
+   padding: 30px;
+}
+.ModalUpload--app--center--spaceViewEmpty-btnUpload{
+   --size: 200px;
+   width: var(--size);
+   height: var(--size);
+   border-radius: 50%;
+   background: rgba(21, 41, 52,.05);
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+   margin: auto;
+   margin-bottom: 60px;
+   text-align: center;
+   cursor: pointer;
+   position: relative;
+   --color: rgba(21, 41, 52,.4);
+   color: var(--color);
+   box-shadow: 0 0 0 20px #fff, 0 0 0 23px rgba(21, 41, 52,.1);
+   transition: all .3s ease;
+}
+.ModalUpload--app--center--spaceViewEmpty-btnUpload:hover{
+   background: linear-gradient(to top right, rgba(246, 79, 116,.95),rgba(168, 20, 204,.9));
+   box-shadow: 0 0 0 20px #fff, 0 0 0 23px rgba(168, 20, 204,.5);
+   --color: #fff;
+}
+.ModalUpload--app--center--spaceViewEmpty-btnUpload span{
+   width: 100%;
+   font-weight: bold;
+}
+.ModalUpload--app--center--spaceViewEmpty-btnUpload div{
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+.ModalUpload--app--center--spaceViewEmpty-btnUpload svg{
+   width: 40%;
+   height: 40%;
+   margin-bottom: 20px;
+}
+.ModalUpload--app--center--spaceViewEmpty-btnUpload svg *{
+   transition: all .3s ease;
+}
+.ModalUpload--app--center--spaceViewEmpty-btnUpload svg *{
+   fill: var(--color)
+}
+.ModalUpload--app--center--spaceViewEmpty{
+   font-size: 13px;
+}
+.ModalUpload--app--center--spaceViewEmpty p{
+   color: rgba(21, 41, 52,.75);
+}
+.ModalUpload--app--center--spaceViewEmpty ul{
+   display: grid;
+   gap: 0 60px;
+   grid-template-columns: repeat(3,1fr);
+}
+.ModalUpload--app--center--spaceViewEmpty ul svg{
+   width: 35px;
+}
+.ModalUpload--app--center--spaceViewEmpty ul svg *{
+   fill: var(--color_theme);
+}
+.ModalUpload--app--center--spaceViewEmpty ul li{
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   padding: 0 20px;
+}
+.ModalUpload--app--center--spaceViewEmpty ul b{
+   display: block;
+   text-align: block;
+   width: 100%;
+   margin-top: 8px;
+   margin-bottom: 5px;
+}
