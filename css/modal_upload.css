@@ -179,7 +179,7 @@ body{
    transition: all .3s ease;
 }
 .ModalUpload--app--center--spaceViewEmpty-btnUpload:hover{
-   background: linear-gradient(to top right, rgba(246, 79, 116,.95),rgba(168, 20, 204,.9));
+   background: rgba(168, 20, 204,.9);
    box-shadow: 0 0 0 20px #fff, 0 0 0 23px rgba(168, 20, 204,.5);
    --color: #fff;
 }
